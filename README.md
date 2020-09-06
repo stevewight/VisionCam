@@ -20,18 +20,29 @@ You can do this like any other SwiftUI view (i.e. adding to the ``rootViewContro
     // In the scene(_,session:,connectionOptions:) method within your SceneDelegate class
     // add FaceCam() to the root UIHostingController
     
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        //...
-        
-        let cam = FaceCam()
+    //...
     
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UIHostingController(rootView: FaceCam())
-        window.makeKeyAndVisible()
-        
-        //...
-    }
+    let cam = FaceCam()
+
+    let window = UIWindow(windowScene: windowScene)
+    window.rootViewController = UIHostingController(rootView: FaceCam())
+    window.makeKeyAndVisible()
+    
+    //...
 ```
+
+The above will use the default ``FaceMaskView``  to automatically track the observations.  You can easily add your own views to track the detected observations by passing in the view via ``ViewBuilder``.
+
+```swift
+    //...
+
+    let cam = FaceCam { observations in
+        MyCustomFaceMaskView()
+    }
+    
+    //...
+```
+
 
 ## Installation
 
