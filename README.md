@@ -2,11 +2,7 @@
 
 📸 Easily add computer vision to your SwiftUI app 📸
 
-VisionCam simplifies the process of building SwiftUI camera apps that utilize computer vision.  It handles most of the boilerplate ``AVCaptureSession`` setup and input/output connection as well as UIKit -> SwiftUI integration with ``UIViewControllerRepresentable``.  Take a deeper look at the architecture below for a high level view of how the system is built or jump straight to the usage and see how easy it is to use in your app.
-
-## Architecture
-
-**TODO**
+VisionCam simplifies the process of building SwiftUI camera apps that utilize computer vision.  It handles most of the boilerplate ``AVCaptureSession`` setup and input/output connection as well as UIKit -> SwiftUI integration with ``UIViewControllerRepresentable``.
 
 ## Usage
 
@@ -59,10 +55,17 @@ You can create your own custom views for face tracking by using some provided he
     //...
 ```
 
-In the above example, once we unwrap our first observation, the ``.boxRect(size:)`` method (provided by **VisionCam**) projects our view from the normalized to the image coordinate space and returns the proper face observation ``CGRect``.  Note we are using the ``GeometryReader`` to get the parent views size for projecting the coordinate space change.  The call to ``faceTransform(newY:)`` is also important as it translates and scales the view rect to the proper size/position in the preview space.
+In the above example, once we unwrap our first observation, the ``.boxRect(size:)`` method (provided by **VisionCam**) projects our view from the normalized to the image coordinate space and returns the proper face observation ``CGRect``.
+
+**Note:** we are using the ``GeometryReader`` to get the parent views size for projecting the coordinate space change.
+
+The call to ``faceTransform(newY:)`` is also important as it translates and scales the view rect to the proper size/position in the preview space.
 
 ## Installation
 
 ## Road Map
+- [x] Face detection and tracking
+- [ ] Pose detection and tracking
+- [ ] Custom model detection and tracking (with CoreML)
 
 ## License
