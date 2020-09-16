@@ -63,6 +63,27 @@ The call to ``faceTransform(newY:)`` is also important as it translates and scal
 
 ## Installation
 
+### Swift Package Manager (SPM)
+
+The Swift Package Manager can be used to install VisionCam.
+
+Follow the instructions for [adding package dependencies](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) provided in the Apple documentation.
+
+Alternatively if you already have your ``Package.swift`` set up, you could add a value for VisionCam to your ``dependencies`` array:
+
+```swift
+    //...
+
+    dependencies: [
+        .package(
+            url: "https://github.com/stevewight/VisionCam.git"
+            from: "0.0.1"
+        )
+    ]
+
+    //...
+```
+
 ## Road Map
 - [x] Face detection and tracking
 - [ ] Pose detection and tracking
