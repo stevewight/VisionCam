@@ -69,3 +69,4 @@ The call to ``faceTransform(newY:)`` is also important as it translates and scal
 - [ ] Custom model detection and tracking (with CoreML)
 
 ## License
+VisionCam is released under the ***MIT*** license. See LICENSE for details.
