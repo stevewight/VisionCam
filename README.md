@@ -84,6 +84,10 @@ Alternatively if you already have your ``Package.swift`` set up, you could add a
     //...
 ```
 
+### Update Info.plist
+
+In the apps Info.plist, make sure to add the ``NSCameraUsageDescription`` key (Privacy - Camera Usage Description) or you will get an error when **VisionCam** attempts to access the devices camera.
+
 ## Road Map
 - [x] Face detection and tracking
 - [ ] Pose detection and tracking
