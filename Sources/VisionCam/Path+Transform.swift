@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Path {
     
-    func faceTransform(newY: CGFloat) -> TransformedShape<TransformedShape<Path>> {
+    public func faceTransform(newY: CGFloat) -> TransformedShape<TransformedShape<Path>> {
         self.transform(.init(scaleX: 1, y: -1))
             .transform(.init(translationX: 0, y: newY))
     }

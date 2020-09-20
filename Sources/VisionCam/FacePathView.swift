@@ -8,11 +8,11 @@
 import SwiftUI
 import Vision
 
-struct FacePathView: View {
+public struct FacePathView: View {
     let color: Color
     let obs: VNFaceObservation
     
-    init(for obs: VNFaceObservation, color: Color = .blue) {
+    public init(for obs: VNFaceObservation, color: Color = .blue) {
         self.color = color
         self.obs = obs
     }
@@ -44,7 +44,7 @@ struct FacePathView: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geo in
             makePath(points: openPoints(geo.size))
                 .faceTransform(newY: geo.size.height)

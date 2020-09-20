@@ -8,15 +8,15 @@
 import SwiftUI
 import Vision
 
-struct FaceCam<Content>: View where Content: View {
+public struct FaceCam<Content>: View where Content: View {
     let builder: ([VNFaceObservation]) -> Content
     @ObservedObject var vm = CamVM()
     
-    @inlinable init(@ViewBuilder builder: @escaping ([VNFaceObservation]) -> Content) {
+    public init(@ViewBuilder builder: @escaping ([VNFaceObservation]) -> Content) {
         self.builder = builder
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             CamRepresentable(vm: vm)
             builder(vm.observations)

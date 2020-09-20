@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     
-    func path(in rect: CGRect) -> some View {
+    public func path(in rect: CGRect) -> some View {
         frame(
             width: rect.width,
             height: rect.height,
@@ -21,7 +21,7 @@ extension View {
         )
     }
     
-    func faceTransform(newY: CGFloat) -> some View {
+    public func faceTransform(newY: CGFloat) -> some View {
         transformEffect(.init(scaleX: 1, y: -1))
         .transformEffect(.init(translationX: 0, y: newY))
     }
