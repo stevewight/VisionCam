@@ -1,8 +1,10 @@
 # VisionCam
 
-📸 Easily add computer vision to your SwiftUI app 📸
+👁📸 Easily add computer vision to your SwiftUI app
 
 VisionCam simplifies the process of building SwiftUI camera apps that utilize computer vision.  It handles most of the boilerplate ``AVCaptureSession`` setup and input/output connection as well as UIKit -> SwiftUI integration with ``UIViewControllerRepresentable``.
+
+**Note:** Alpha version
 
 ## Usage
 

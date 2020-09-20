@@ -1,6 +1,6 @@
 //
 //  AVCaptureDevice+Resolution.swift
-//  HackCam
+//  VisionCam
 //
 //  Created by Steve on 8/22/20.
 //
