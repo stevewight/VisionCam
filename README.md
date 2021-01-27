@@ -92,7 +92,8 @@ In the apps Info.plist, make sure to add the ``NSCameraUsageDescription`` key (P
 
 ## Road Map
 - [x] Face detection and tracking
-- [ ] Pose detection and tracking
+- [ ] Text detection and tracking
+- [ ] Body and hand pose detection and tracking
 - [ ] Custom model detection and tracking (with CoreML)
 
 ## License
