@@ -10,7 +10,7 @@ import Vision
 
 public struct FaceCam<Content>: View where Content: View {
     let builder: ([VNFaceObservation]) -> Content
-    @ObservedObject var vm = CamVM()
+    @StateObject var vm = CamVM()
     
     public init(@ViewBuilder builder: @escaping ([VNFaceObservation]) -> Content) {
         self.builder = builder
