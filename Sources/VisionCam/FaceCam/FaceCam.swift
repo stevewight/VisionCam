@@ -10,7 +10,7 @@ import Vision
 
 public struct FaceCam<Content>: View where Content: View {
     let builder: ([VNFaceObservation]) -> Content
-    @StateObject var vm = CamVM()
+    @StateObject var vm = FaceCamVM()
     
     public init(@ViewBuilder builder: @escaping ([VNFaceObservation]) -> Content) {
         self.builder = builder
@@ -18,7 +18,7 @@ public struct FaceCam<Content>: View where Content: View {
     
     public var body: some View {
         ZStack {
-            CamRepresentable(vm: vm)
+            FaceCamRepresentable(vm: vm)
             builder(vm.observations)
         }
     }

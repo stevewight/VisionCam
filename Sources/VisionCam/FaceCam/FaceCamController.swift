@@ -1,5 +1,5 @@
 //
-//  CamController.swift
+//  FaceCamController.swift
 //  VisionCam
 //
 //  Created by Steve on 7/28/20.
@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class CamController: UIViewController {
+class FaceCamController: UIViewController {
     var session = CapSession()
     var preview = CamPreview()
     var faceTracker = FaceTracker()
@@ -40,7 +40,7 @@ class CamController: UIViewController {
     
 }
 
-extension CamController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension FaceCamController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         

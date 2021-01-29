@@ -11,7 +11,7 @@ import AVFoundation
 class CapVidDataOut: AVCaptureVideoDataOutput {
     var queue = DispatchQueue(label: "com.vision-cam.pkg")
     
-    init(delegate: CamController) {
+    init(delegate: FaceCamController) {
         super.init()
         alwaysDiscardsLateVideoFrames = true
         setSampleBufferDelegate(delegate, queue: queue)

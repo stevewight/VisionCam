@@ -1,5 +1,5 @@
 //
-//  CamRepresentable.swift
+//  FaceCamRepresentable.swift
 //  VisionCam
 //
 //  Created by Steve on 7/28/20.
@@ -10,16 +10,16 @@ import UIKit
 import SwiftUI
 import Vision
 
-struct CamRepresentable: UIViewControllerRepresentable {
-    @ObservedObject var vm: CamVM
+struct FaceCamRepresentable: UIViewControllerRepresentable {
+    @ObservedObject var vm: FaceCamVM
 
-    func makeUIViewController(context: Context) -> CamController {
-        let controller = CamController()
+    func makeUIViewController(context: Context) -> FaceCamController {
+        let controller = FaceCamController()
         controller.faceTracker.delegate = context.coordinator
         return controller
     }
 
-    func updateUIViewController(_ cameraViewController: CamController, context: Context) {
+    func updateUIViewController(_ cameraViewController: FaceCamController, context: Context) {
         // update VC with changes from SwiftUI
     }
     
@@ -28,9 +28,9 @@ struct CamRepresentable: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UINavigationControllerDelegate, FaceTrackerDelegate {
-        let parent: CamRepresentable
+        let parent: FaceCamRepresentable
 
-        init(_ parent: CamRepresentable) {
+        init(_ parent: FaceCamRepresentable) {
             self.parent = parent
         }
         
