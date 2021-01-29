@@ -8,6 +8,9 @@
 import UIKit
 import AVFoundation
 
+/**
+ UIViewController subclass for integrating capture session, camera preview and face tracking.
+ */
 class FaceCamController: UIViewController {
     var session = CapSession()
     var preview = CamPreview()
@@ -18,10 +21,16 @@ class FaceCamController: UIViewController {
         setup()
     }
     
+    /**
+     Switch camera hardware device that is providing the pixel buffer (front/back)
+     */
     public func didTapCamSwitch() {
         session.switchCam()
     }
     
+    /**
+     Setup the face tracker, input, output, preview and start the session.
+     */
     private func setup() {
         faceTracker.prepare()
         setUpInputOutput()
@@ -29,6 +38,11 @@ class FaceCamController: UIViewController {
         session.startRunning()
     }
     
+    /**
+     Initiate the sessions input device and add the captured video output.
+
+    - Todo: Throw a proper error when input device setup fails.
+     */
     private func setUpInputOutput() {
         do {
             try session.setUpInputDevice()
@@ -42,6 +56,9 @@ class FaceCamController: UIViewController {
 
 extension FaceCamController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    /**
+     Conform to `AVCaptureVideoDataOutputSampleBufferDelegate` to recieve the pixel buffer and pass it to the `FaceTracker` for processing.
+     */
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         let capOut = CapOutput(buffer: sampleBuffer, output: output)

@@ -10,6 +10,11 @@ import UIKit
 import SwiftUI
 import Vision
 
+/**
+ Integration point with UIKit through conformation of `UIViewControllerRepresentable`.
+
+ The `FaceCamVM` is our `ObservableObject` that publishes changes through the `Coordinator`.
+ */
 struct FaceCamRepresentable: UIViewControllerRepresentable {
     @ObservedObject var vm: FaceCamVM
 
@@ -27,6 +32,9 @@ struct FaceCamRepresentable: UIViewControllerRepresentable {
         Coordinator(self)
     }
 
+    /**
+     Coordinator for use handling face tracker delegation
+     */
     class Coordinator: NSObject, UINavigationControllerDelegate, FaceTrackerDelegate {
         let parent: FaceCamRepresentable
 
