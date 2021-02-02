@@ -8,6 +8,9 @@
 import Foundation
 import AVFoundation
 
+/**
+ Encapsulation of sample buffer and capture output
+ */
 struct CapOutput {
     let buffer: CMSampleBuffer
     let output: AVCaptureOutput

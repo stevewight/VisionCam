@@ -8,6 +8,9 @@
 import UIKit
 import AVFoundation
 
+/**
+ Manages the camera capture devices and their configurations
+ */
 class Devices {
     var front: AVCaptureDevice?
     var back: AVCaptureDevice?
@@ -43,6 +46,9 @@ class Devices {
         setDevices()
     }
     
+    /**
+     Change the current capture device between front and back
+     */
     public func switchCam() {
         if current == front {
             current = back
@@ -51,6 +57,9 @@ class Devices {
         }
     }
     
+    /**
+     Initial setup of capture device
+     */
     private func setDevices() {
         
         for device in discovery.devices {
@@ -67,6 +76,11 @@ class Devices {
         current = front
     }
     
+    /**
+     Setup of resolution on the currently set up capture device
+
+     - Todo: handle `catch` when issue during configuration
+     */
     private func setResolution() {
         guard let current = current else { return }
         if let highRes = current.highestRes420Format() {

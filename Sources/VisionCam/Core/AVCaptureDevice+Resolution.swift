@@ -10,6 +10,11 @@ import AVFoundation
 
 extension AVCaptureDevice {
     
+    /**
+    Helper method to find the highest resolution 420 format for the current capture device
+
+     - Returns: Tuple that holds both the device format and resolution calculated
+     */
     public func highestRes420Format() -> (format: AVCaptureDevice.Format, resolution: CGSize)? {
         var highFormat: AVCaptureDevice.Format? = nil
         var highDimensions = CMVideoDimensions(width: 0, height: 0)
