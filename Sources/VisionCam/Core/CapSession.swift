@@ -29,7 +29,7 @@ class CapSession: AVCaptureSession {
         beginConfiguration()
         removeInput(currentInput)
         devices.switchCam()
-        try? addCurrentDeviceInput()
+        try? setUpInputDevice()
         commitConfiguration()
     }
     
@@ -52,18 +52,6 @@ class CapSession: AVCaptureSession {
         if canAddOutput(output) {
             addOutput(output)
         }
-    }
-    
-    /**
-     - Todo: Remove this as its redundant with `setUpInputDevice()`
-     */
-    private func addCurrentDeviceInput() throws {
-        do {
-            let input = try AVCaptureDeviceInput(
-                device: devices.current!
-            )
-            addInput(input)
-        } catch { print("issue switching input camera") }
     }
     
 }
